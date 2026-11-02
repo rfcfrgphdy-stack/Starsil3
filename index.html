@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СТАРСИЛ — Опора ваших исследований</title>
+  <meta name="description" content="ООО «СТАРСИЛ» предлагает набор изделий для монтажа оптических узлов. Полный спектр возможностей, эргономичность и доступность.">
+  <style>
+    :root {
+      --blue: #0096d6;
+      --blue-dark: #0077b3;
+      --navy: #1a2a3a;
+      --text: #2c3e50;
+      --light: #f7f9fc;
+      --gray: #e8eef5;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      color: #5a6a7a;
+    }
+
+    .logo-box {
+      width: 220px;
+      height: 220px;
+      background: linear-gradient(145deg, #4a6cf7, #7b5cff);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 40px rgba(74, 108, 247, 0.35);
+      flex-shrink: 0;
+    }
+
+    .logo-inner {
+      background: rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 20px 24px;
+      text-align: center;
+      color: white;
+    }
+
+    .logo-inner svg {
+      width: 56px;
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    .logo-inner .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-inner .tag {
+      font-size: 0.75rem;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    /* Blue section */
+    .intro {
+      background: var(--blue);
+      color: white;
+      padding: 70px 0 60px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      max-width: 780px;
+      margin: 0 auto 50px;
+      line-height: 1.35;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .feature h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      line-height: 1.5;
+    }
+
+    /* Catalog */
+    .catalog {
+      padding: 80px 0 40px;
+    }
+
+    .catalog h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 40px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid #e0e6ed;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th {
+      background: var(--light);
+      padding: 16px 18px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy);
+      border-bottom: 1px solid #dce3ec;
+    }
+
+    td {
+      padding: 18px;
+      border-bottom: 1px solid #edf1f6;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafbfd;
+    }
+
+    .product-img {
+      width: 100px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img img {
+      max-width: 95px;
+      max-height: 75px;
+      object-fit: contain;
+    }
+
+    .grant-logo img {
+      height: 70px;
+      width: auto;
+      max-width: 220px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin: 32px 0 0;
+      background: var(--blue);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .download-btn:hover {
+      background: var(--blue-dark);
+    }
+
+    /* How to buy */
+    .howto {
+      padding: 60px 0 80px;
+      text-align: center;
+    }
+
+    .howto h2 {
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 50px;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .step {
+      flex: 1;
+      padding: 0 16px;
+      position: relative;
+    }
+
+    .step-num {
+      width: 100%;
+      height: 48px;
+      background: #eef2f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%);
+      margin-bottom: 18px;
+    }
+
+    .step:last-child .step-num {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .step h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: #5a6a7a;
+    }
+
+    /* Contacts */
+    .contacts {
+      background: var(--light);
+      padding: 60px 0;
+    }
+
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contacts h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .contacts a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    .contacts a:hover {
+      text-decoration: underline;
+    }
+
+    .contacts p {
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 40px 0 50px;
+      text-align: center;
+      border-top: 1px solid #e8eef5;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer p {
+      font-size: 0.85rem;
+      color: #6a7a8a;
+      max-width: 480px;
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    .grant-logo {
+      flex-shrink: 0;
+    }
+
+    .grant-logo svg {
+      height: 70px;
+      width: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 0 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+
+      .logo-box {
+        width: 180px;
+        height: 180px;
+      }
+
+      .intro h2 {
+        font-size: 1.4rem;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .steps {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .step-num {
+        clip-path: none;
+        border-radius: 8px;
+        width: 60px;
+        margin: 0 auto 12px;
+      }
+
+      .contacts-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer p {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; width:100%;">
+      <div class="hero-text">
+        <h1>СТАРСИЛ</h1>
+        <p>Опора ваших исследований</p>
+      </div>
+      <div class="logo-box">
+        <div class="logo-inner">
+          <!-- Optics icon -->
+          <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="20" r="12" stroke="white" stroke-width="2.5"/>
+            <circle cx="46" cy="20" r="12" stroke="white" stroke-width="2.5"/>
+            <path d="M30 20h4" stroke="white" stroke-width="2.5"/>
+            <circle cx="18" cy="20" r="5" stroke="white" stroke-width="1.8"/>
+            <circle cx="46" cy="20" r="5" stroke="white" stroke-width="1.8"/>
+            <path d="M8 12l4-6h12l4 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M36 12l4-6h12l4 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="brand">СТАРСИЛ</div>
+          <div class="tag">Опора исследований</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro + Features -->
+  <section class="intro">
+    <div class="container">
+      <h2>ООО «СТАРСИЛ» предлагает набор изделий для монтажа оптических узлов</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Функциональность</h3>
+          <p>Полный спектр возможностей<br>Унификация под разные стандарты крепления</p>
+        </div>
+        <div class="feature">
+          <h3>Эргономичность</h3>
+          <p>Продукция разработана работниками оптической лаборатории</p>
+        </div>
+        <div class="feature">
+          <h3>Доступность</h3>
+          <p>Низкая стоимость, возможность доставки по всей России</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog -->
+  <section class="catalog">
+    <div class="container">
+      <h2>Каталог продукции</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Название продукции</th>
+              <th>Описание</th>
+              <th>Характеристики</th>
+              <th>Изображение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Монтажные стержни</strong></td>
+              <td>Типовые стержни для монтажа оптических узлов.</td>
+              <td>Диаметры, опционально:<br>12, 12.7, 15 мм<br>Длина, опционально:<br>100, 150, 200 мм</td>
+              <td>
+                <div class="product-img">
+                  <img src="images/rod.jpg" alt="Монтажный стержень">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Стойки</strong></td>
+              <td>Стойки для крепления монтажных стержней, комплектуются стальными винтами для фиксации стержней.</td>
+              <td>Высота стойки 70 мм, диаметр стойки 34 мм, диаметр фиксируемого стержня опционально 12, 12.7, 15 мм.</td>
+              <td>
+                <div class="product-img">
+                  <img src="images/post.jpg" alt="Стойка">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Основание</strong></td>
+              <td>Компактное основание штатива.</td>
+              <td>Ширина основания 34 мм, длина опционально 67 или 107 мм.</td>
+              <td>
+                <div class="product-img">
+                  <img src="images/base.jpg" alt="Основание">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Скамья - основание</strong></td>
+              <td>Более устойчивый вариант основания, предназначенный для крупных оптических узлов.</td>
+              <td>Квадратное основание 70 на 80 мм, высотой 18 мм.</td>
+              <td>
+                <div class="product-img">
+                  <img src="images/bench.jpg" alt="Скамья-основание">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Переходник с прямым углом</strong></td>
+              <td>Переходник для закрепления стержней под углом 90 градусов</td>
+              <td>Диаметры, опционально:<br>12, 12.7, 15 мм</td>
+              <td>
+                <div class="product-img">
+                  <img src="images/adapter90.jpg" alt="Переходник 90°">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Переходник с переменным углом</strong></td>
+              <td>Переходник для закрепления стержней под произвольным углом.</td>
+              <td>Диаметры, опционально:<br>12, 12.7, 15 мм</td>
+              <td>
+                <div class="product-img">
+                  <img src="images/adapter-var.jpg" alt="Переходник с переменным углом">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="text-align:center;">
+        <a href="mailto:starsil-info@yandex.ru?subject=Запрос%20чертежей%20СТАРСИЛ" class="download-btn">Скачать комплект чертежей</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to buy -->
+  <section class="howto">
+    <div class="container">
+      <h2>Как приобрести</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Шаг 1</h3>
+          <p>Выберите нужную продукцию</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Шаг 2</h3>
+          <p>Выберите транспортную компанию</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Шаг 3</h3>
+          <p>Отправьте коммерческое предложение на почту</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts -->
+  <section class="contacts">
+    <div class="container">
+      <div class="contacts-grid">
+        <div>
+          <h3>Для связи</h3>
+          <a href="mailto:starsil-info@yandex.ru">starsil-info@yandex.ru</a>
+        </div>
+        <div>
+          <h3>Адрес регистрации</h3>
+          <p>249039, Калужская область, г Обнинск,<br>
+          Университетская ул, д. 2, офис 240 рабочее место №12</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>Данный проект выполнен при поддержке гранта Фонда содействия инновациям, предоставленного в рамках программы «Студенческий стартап» федерального проекта «Платформа университетского технологического предпринимательства»</p>
+        <div class="grant-logo">
+          <img src="images/fond-logo.jpg" alt="Фонд содействия инновациям — 30 лет">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
